@@ -1,0 +1,34 @@
+﻿using UnityEngine;
+
+public class Spawner : MonoBehaviour
+{
+    public Pipes prefab;
+    public float spawnRate = 5f;
+    public float minHeight = -1f;
+    public float maxHeight = 2f;
+    public float verticalGap = 3f;
+
+    private void OnEnable()
+    {
+        InvokeRepeating(nameof(Spawn), spawnRate, spawnRate);
+    }
+
+    private void OnDisable()
+    {
+        CancelInvoke(nameof(Spawn));
+    }
+
+    private void Spawn()
+    {
+        Pipes pipes = Instantiate(prefab, transform.position, Quaternion.identity);
+        pipes.transform.position += Vector3.up * Random.Range(minHeight, maxHeight);
+
+        int revives = GameManager.Instance.reviveCount;
+
+        // 间隔越来越大
+        pipes.gap = verticalGap + (revives * 0.5f);
+
+        
+    }
+
+}
