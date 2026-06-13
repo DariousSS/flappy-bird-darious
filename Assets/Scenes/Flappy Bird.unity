@@ -277,6 +277,7 @@ MonoBehaviour:
   gameOver: {fileID: 298509898}
   reviveTime: 2
   brightThreshold: 300
+  reviveCount: 0
 --- !u!4 &149568775
 Transform:
   m_ObjectHideFlags: 0
@@ -592,6 +593,11 @@ MonoBehaviour:
   currentHealth: 0
   healTime: 1.5
   brightThreshold: 300
+  noteClips:
+  - {fileID: 8300000, guid: 6fe70464ba4e64632afa2b4bdef3bab2, type: 3}
+  - {fileID: 8300000, guid: ddf7826693cd94209895bf967caedefc, type: 3}
+  - {fileID: 8300000, guid: e6459c8ef692646d5b57947e2a6c6465, type: 3}
+  - {fileID: 8300000, guid: a13bb1087539540e1ae23a62a6ed42c4, type: 3}
   topLimit: 5
   bottomLimit: -5
   invincibleDuration: 2

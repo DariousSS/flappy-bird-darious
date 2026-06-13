@@ -15,6 +15,10 @@ public class Player : MonoBehaviour
     // 光线高于这个值算"手电筒照上了"
     public int brightThreshold = 300;
 
+    public AudioClip[] noteClips; // 在 Inspector 里拖入 1, 2, 3, 4
+    private AudioSource audioSource;
+    public static int noteIndex = 0; // static：所有鸟共享同一个计数器
+
     private SpriteRenderer spriteRenderer;
     private Vector3 direction;
     private int spriteIndex;
@@ -29,6 +33,8 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.playOnAwake = false;
     }
 
     private void Start()
@@ -97,6 +103,13 @@ public class Player : MonoBehaviour
         spriteRenderer.sprite = sprites[spriteIndex];
     }
 
+    private void PlayNextNote()
+    {
+        if (noteClips == null || noteClips.Length == 0) return;
+        audioSource.PlayOneShot(noteClips[noteIndex % noteClips.Length]);
+        noteIndex++;
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Obstacle"))
@@ -116,6 +129,7 @@ public class Player : MonoBehaviour
         else if (other.gameObject.CompareTag("Scoring"))
         {
             GameManager.Instance.IncreaseScore();
+            PlayNextNote();
         }
     }
 }
