@@ -1,8 +1,30 @@
-# Flappy Bird (2D)
-
-> Flappy Bird is a mobile game developed by Vietnamese video game artist and programmer Dong Nguyen. The game is a side-scroller where the player controls a bird, attempting to fly between columns of green pipes without hitting them.
-
-- **Topics**: Side Scrolling, Infinite Generation, Parallax
-- **Version**: Unity 2019.4 (LTS)
-- [**Download**](https://github.com/zigurous/unity-flappy-bird-tutorial/archive/refs/heads/main.zip)
-- [**Watch Video**](https://youtu.be/ihvBiJ1oC9U)
+/README.md
+/docs
+	/01-project-overview.md
+	/02-research.md
+	/03-design-process.md
+	/04-implementation.md
+	/05-testing-feedback.md
+	/06-reflection.md
+/devlog
+	/2026-05-26-literature.md
+	/2026-06-03-ideas.md
+	/2026-06-04-revision-plan.md
+	/2026-06-05-revival-by-light.md
+	/2026-06-06-audio-bugfix.md
+	/2026-06-07-lighting-tests.md
+	/2026-06-08-logic-implementation.md
+	/2026-06-09-style-iteration.md
+	/2026-06-10-concept-refine.md
+	/2026-06-11-sound-interaction.md
+	/2026-06-12-presentation-feedback.md
+	/2026-06-13-user-testing.md
+/assets
+	/images
+	/video
+	/audio
+/src
+	(unity or code export)
+/hardware
+	/arduino
+	/schematics
